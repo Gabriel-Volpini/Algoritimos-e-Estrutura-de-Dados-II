@@ -1,133 +1,137 @@
-Extremamente B·sico:
+Enunciado dos Exercicios:     site:urionlinejudge.com.br/
 
-Leia 2 valores inteiros e armazene-os nas vari·veis A e B. Efetue a soma de A e B atribuindo o seu resultado na vari·vel X. Imprima X conforme exemplo apresentado abaixo. N„o apresente mensagem alguma alÈm daquilo que est· sendo especificado e n„o esqueÁa de imprimir o fim de linha apÛs o resultado, caso contr·rio, vocÍ receber· "Presentation Error".
+
+----------------------------------------------------------------------------------------------------------------------------------------
+Extremamente B√°sico:
+
+Leia 2 valores inteiros e armazene-os nas vari√°veis A e B. Efetue a soma de A e B atribuindo o seu resultado na vari√°vel X. Imprima X conforme exemplo apresentado abaixo. N√£o apresente mensagem alguma al√©m daquilo que est√° sendo especificado e n√£o esque√ßa de imprimir o fim de linha ap√≥s o resultado, caso contr√°rio, voc√™ receber√° "Presentation Error".
 
 Entrada
-A entrada contÈm 2 valores inteiros.
+A entrada cont√©m 2 valores inteiros.
 
-SaÌda
-Imprima a mensagem "X = " (letra X mai˙scula) seguido pelo valor da vari·vel X e pelo final de linha. Cuide para que tenha um espaÁo antes e depois do sinal de igualdade, conforme o exemplo abaixo.
+Sa√≠da
+Imprima a mensagem "X = " (letra X mai√∫scula) seguido pelo valor da vari√°vel X e pelo final de linha. Cuide para que tenha um espa√ßo antes e depois do sinal de igualdade, conforme o exemplo abaixo.
 
-
+----------------------------------------------------------------------------------------------------------------------------------------
 O Maior:
 
-FaÁa um programa que leia trÍs valores e apresente o maior dos trÍs valores lidos seguido da mensagem ìeh o maiorî. Utilize a fÛrmula:  MaiorAB = (a+b+abs(a-b))/2
+Fa√ßa um programa que leia tr√™s valores e apresente o maior dos tr√™s valores lidos seguido da mensagem ‚Äúeh o maior‚Äù. Utilize a f√≥rmula:  MaiorAB = (a+b+abs(a-b))/2
 
-Obs.: a fÛrmula apenas calcula o maior entre os dois primeiros (a e b). Um segundo passo, portanto È necess·rio para chegar no resultado esperado.
-
-Entrada
-O arquivo de entrada contÈm trÍs valores inteiros.
-
-SaÌda
-Imprima o maior dos trÍs valores seguido por um espaÁo e a mensagem "eh o maior".
-
-
-Dist‚ncia Entre Dois Pontos:
-
-
-Leia os quatro valores correspondentes aos eixos x e y de dois pontos quaisquer no plano, p1(x1,y1) e p2(x2,y2) e calcule a dist‚ncia entre eles, mostrando 4 casas decimais apÛs a vÌrgula, segundo a fÛrmula de distancia padrao da matematica.
+Obs.: a f√≥rmula apenas calcula o maior entre os dois primeiros (a e b). Um segundo passo, portanto √© necess√°rio para chegar no resultado esperado.
 
 Entrada
-O arquivo de entrada contÈm duas linhas de dados. A primeira linha contÈm dois valores de ponto flutuante: x1 y1 e a segunda linha contÈm dois valores de ponto flutuante x2 y2.
+O arquivo de entrada cont√©m tr√™s valores inteiros.
 
-SaÌda
-Calcule e imprima o valor da dist‚ncia segundo a fÛrmula fornecida, com 4 casas apÛs o ponto decimal.
+Sa√≠da
+Imprima o maior dos tr√™s valores seguido por um espa√ßo e a mensagem "eh o maior".
+
+----------------------------------------------------------------------------------------------------------------------------------------
+Dist√¢ncia Entre Dois Pontos:
 
 
+Leia os quatro valores correspondentes aos eixos x e y de dois pontos quaisquer no plano, p1(x1,y1) e p2(x2,y2) e calcule a dist√¢ncia entre eles, mostrando 4 casas decimais ap√≥s a v√≠rgula, segundo a f√≥rmula de distancia padrao da matematica.
+
+Entrada
+O arquivo de entrada cont√©m duas linhas de dados. A primeira linha cont√©m dois valores de ponto flutuante: x1 y1 e a segunda linha cont√©m dois valores de ponto flutuante x2 y2.
+
+Sa√≠da
+Calcule e imprima o valor da dist√¢ncia segundo a f√≥rmula fornecida, com 4 casas ap√≥s o ponto decimal.
+
+----------------------------------------------------------------------------------------------------------------------------------------
 Par ou Impar:
 
 
-Leia um valor inteiro N. Este valor ser· a quantidade de valores que ser„o lidos em seguida. Para cada valor lido, mostre uma mensagem em inglÍs dizendo se este valor lido È par (EVEN), Ìmpar (ODD), positivo (POSITIVE) ou negativo (NEGATIVE). No caso do valor ser igual a zero (0), embora a descriÁ„o correta seja (EVEN NULL), pois por definiÁ„o zero È par, seu programa dever· imprimir apenas NULL.
+Leia um valor inteiro N. Este valor ser√° a quantidade de valores que ser√£o lidos em seguida. Para cada valor lido, mostre uma mensagem em ingl√™s dizendo se este valor lido √© par (EVEN), √≠mpar (ODD), positivo (POSITIVE) ou negativo (NEGATIVE). No caso do valor ser igual a zero (0), embora a descri√ß√£o correta seja (EVEN NULL), pois por defini√ß√£o zero √© par, seu programa dever√° imprimir apenas NULL.
 
 Entrada
-A primeira linha da entrada contÈm um valor inteiro N(N < 10000) que indica o n˙mero de casos de teste. Cada caso de teste a seguir È um valor inteiro X (-107 < X <107).
+A primeira linha da entrada cont√©m um valor inteiro N(N < 10000) que indica o n√∫mero de casos de teste. Cada caso de teste a seguir √© um valor inteiro X (-107 < X <107).
 
-SaÌda
-Para cada caso, imprima uma mensagem correspondente, de acordo com o exemplo abaixo. Todas as letras dever„o ser mai˙sculas e sempre dever· haver um espaÁo entre duas palavras impressas na mesma linha.
+Sa√≠da
+Para cada caso, imprima uma mensagem correspondente, de acordo com o exemplo abaixo. Todas as letras dever√£o ser mai√∫sculas e sempre dever√° haver um espa√ßo entre duas palavras impressas na mesma linha.
 
-
+----------------------------------------------------------------------------------------------------------------------------------------
 Troca em Vetor I:
 
 
-FaÁa um programa que leia um vetor N[20]. Troque a seguir, o primeiro elemento com o ˙ltimo, o segundo elemento com o pen˙ltimo, etc., atÈ trocar o 10∫ com o 11∫. Mostre o vetor modificado.
+Fa√ßa um programa que leia um vetor N[20]. Troque a seguir, o primeiro elemento com o √∫ltimo, o segundo elemento com o pen√∫ltimo, etc., at√© trocar o 10¬∫ com o 11¬∫. Mostre o vetor modificado.
 
 Entrada
-A entrada contÈm 20 valores inteiros, positivos ou negativos.
+A entrada cont√©m 20 valores inteiros, positivos ou negativos.
 
-SaÌda
-Para cada posiÁ„o do vetor N, escreva "N[i] = Y", onde i È a posiÁ„o do vetor e Y È o valor armazenado naquela posiÁ„o.
+Sa√≠da
+Para cada posi√ß√£o do vetor N, escreva "N[i] = Y", onde i √© a posi√ß√£o do vetor e Y √© o valor armazenado naquela posi√ß√£o.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+Menor e Posi√ß√£o:
 
 
-Menor e PosiÁ„o:
-
-
-FaÁa um programa que leia um valor N. Este N ser· o tamanho de um vetor X[N]. A seguir, leia cada um dos valores de X, encontre o menor elemento deste vetor e a sua posiÁ„o dentro do vetor, mostrando esta informaÁ„o.
+Fa√ßa um programa que leia um valor N. Este N ser√° o tamanho de um vetor X[N]. A seguir, leia cada um dos valores de X, encontre o menor elemento deste vetor e a sua posi√ß√£o dentro do vetor, mostrando esta informa√ß√£o.
 
 Entrada
-A primeira linha de entrada contem um ˙nico inteiro N (1 < N < 1000), indicando o n˙mero de elementos que dever„o ser lidos em seguida para o vetor X[N] de inteiros. A segunda linha contÈm cada um dos N valores, separados por um espaÁo.
+A primeira linha de entrada contem um √∫nico inteiro N (1 < N < 1000), indicando o n√∫mero de elementos que dever√£o ser lidos em seguida para o vetor X[N] de inteiros. A segunda linha cont√©m cada um dos N valores, separados por um espa√ßo.
 
-SaÌda
-A primeira linha apresenta a mensagem ìMenor valor:î seguida de um espaÁo e do menor valor lido na entrada. A segunda linha apresenta a mensagem ìPosicao:î seguido de um espaÁo e da posiÁ„o do vetor na qual se encontra o menor valor lido, lembrando que o vetor inicia na posiÁ„o zero.
+Sa√≠da
+A primeira linha apresenta a mensagem ‚ÄúMenor valor:‚Äù seguida de um espa√ßo e do menor valor lido na entrada. A segunda linha apresenta a mensagem ‚ÄúPosicao:‚Äù seguido de um espa√ßo e da posi√ß√£o do vetor na qual se encontra o menor valor lido, lembrando que o vetor inicia na posi√ß√£o zero.
 
-
+----------------------------------------------------------------------------------------------------------------------------------------
 Linha na Matriz:
 
-Neste problema vocÍ deve ler um n˙mero, indicando uma linha da matriz na qual uma operaÁ„o deve ser realizada, um caractere mai˙sculo, indicando a operaÁ„o que ser· realizada, e todos os elementos de uma matriz M[12][12]. Em seguida, calcule e mostre a soma ou a mÈdia dos elementos que est„o na ·rea verde da matriz, conforme for o caso. A imagem abaixo ilustra o caso da entrada do valor 2 para a linha da matriz, demonstrando os elementos que dever„o ser considerados na operaÁ„o.
+Neste problema voc√™ deve ler um n√∫mero, indicando uma linha da matriz na qual uma opera√ß√£o deve ser realizada, um caractere mai√∫sculo, indicando a opera√ß√£o que ser√° realizada, e todos os elementos de uma matriz M[12][12]. Em seguida, calcule e mostre a soma ou a m√©dia dos elementos que est√£o na √°rea verde da matriz, conforme for o caso. A imagem abaixo ilustra o caso da entrada do valor 2 para a linha da matriz, demonstrando os elementos que dever√£o ser considerados na opera√ß√£o.
 
 
 Entrada
-A primeira linha de entrada contem um n˙mero L (0 = L = 11) indicando a linha que ser· considerada para operaÁ„o. A segunda linha de entrada contÈm um ˙nico caractere Mai˙sculo T ('S' ou 'M'), indicando a operaÁ„o (Soma ou MÈdia) que dever· ser realizada com os elementos da matriz. Seguem os 144 valores de ponto flutuante que compıem a matriz, sendo que a mesma È preenchida linha por linha, da linha 0 atÈ a linha 11, sempre da esquerda para a direita.
+A primeira linha de entrada contem um n√∫mero L (0 = L = 11) indicando a linha que ser√° considerada para opera√ß√£o. A segunda linha de entrada cont√©m um √∫nico caractere Mai√∫sculo T ('S' ou 'M'), indicando a opera√ß√£o (Soma ou M√©dia) que dever√° ser realizada com os elementos da matriz. Seguem os 144 valores de ponto flutuante que comp√µem a matriz, sendo que a mesma √© preenchida linha por linha, da linha 0 at√© a linha 11, sempre da esquerda para a direita.
 
-SaÌda
-Imprima o resultado solicitado (a soma ou mÈdia), com 1 casa apÛs o ponto decimal.
+Sa√≠da
+Imprima o resultado solicitado (a soma ou m√©dia), com 1 casa ap√≥s o ponto decimal.
 
-
+----------------------------------------------------------------------------------------------------------------------------------------
 Coluna na Matriz:
 
-Neste problema vocÍ deve ler um n˙mero que indica uma coluna de uma matriz na qual uma operaÁ„o deve ser realizada, um caractere mai˙sculo, indicando a operaÁ„o que ser· realizada, e todos os elementos de uma matriz M[12][12]. Em seguida, calcule e mostre a soma ou a mÈdia dos elementos que est„o na ·rea verde da matriz, conforme for o caso. A imagem abaixo ilustra o caso da entrada do valor 5 para a coluna da matriz, demonstrando os elementos que dever„o ser considerados na operaÁ„o.
+Neste problema voc√™ deve ler um n√∫mero que indica uma coluna de uma matriz na qual uma opera√ß√£o deve ser realizada, um caractere mai√∫sculo, indicando a opera√ß√£o que ser√° realizada, e todos os elementos de uma matriz M[12][12]. Em seguida, calcule e mostre a soma ou a m√©dia dos elementos que est√£o na √°rea verde da matriz, conforme for o caso. A imagem abaixo ilustra o caso da entrada do valor 5 para a coluna da matriz, demonstrando os elementos que dever√£o ser considerados na opera√ß√£o.
 
 
 Entrada
-A primeira linha de entrada contem um n˙mero C (0 = C = 11) indicando a coluna que ser· considerada para operaÁ„o. A segunda linha de entrada contÈm um ˙nico caractere Mai˙sculo T ('S' ou 'M'), indicando a operaÁ„o (Soma ou MÈdia) que dever· ser realizada com os elementos da matriz. Seguem os 144 valores de ponto flutuante que compıem a matriz.
+A primeira linha de entrada contem um n√∫mero C (0 = C = 11) indicando a coluna que ser√° considerada para opera√ß√£o. A segunda linha de entrada cont√©m um √∫nico caractere Mai√∫sculo T ('S' ou 'M'), indicando a opera√ß√£o (Soma ou M√©dia) que dever√° ser realizada com os elementos da matriz. Seguem os 144 valores de ponto flutuante que comp√µem a matriz.
 
-SaÌda
-Imprima o resultado solicitado (a soma ou mÈdia), com 1 casa apÛs o ponto decimal.
+Sa√≠da
+Imprima o resultado solicitado (a soma ou m√©dia), com 1 casa ap√≥s o ponto decimal.
 
-
+----------------------------------------------------------------------------------------------------------------------------------------
 Acima da Diagonal Principal:
 
-Leia um caractere mai˙sculo, que indica uma operaÁ„o que deve ser realizada e uma matriz M[12][12]. Em seguida, calcule e mostre a soma ou a mÈdia considerando somente aqueles elementos que est„o acima da diagonal principal da matriz, conforme ilustrado abaixo (·rea verde).
+Leia um caractere mai√∫sculo, que indica uma opera√ß√£o que deve ser realizada e uma matriz M[12][12]. Em seguida, calcule e mostre a soma ou a m√©dia considerando somente aqueles elementos que est√£o acima da diagonal principal da matriz, conforme ilustrado abaixo (√°rea verde).
 
 
 
 
 Entrada
-A primeira linha de entrada contem um ˙nico caractere Mai˙sculo O ('S' ou 'M'), indicando a operaÁ„o (Soma ou MÈdia) que dever· ser realizada com os elementos da matriz. Seguem os 144 valores de ponto flutuante que compıem a matriz.
+A primeira linha de entrada contem um √∫nico caractere Mai√∫sculo O ('S' ou 'M'), indicando a opera√ß√£o (Soma ou M√©dia) que dever√° ser realizada com os elementos da matriz. Seguem os 144 valores de ponto flutuante que comp√µem a matriz.
 
-SaÌda
-Imprima o resultado solicitado (a soma ou mÈdia), com 1 casa apÛs o ponto decimal.
+Sa√≠da
+Imprima o resultado solicitado (a soma ou m√©dia), com 1 casa ap√≥s o ponto decimal.
 
-
+----------------------------------------------------------------------------------------------------------------------------------------
 Bazinga!:
 
-No oitavo episodio da segunda temporada do seriado The Big Bang Theory, The Lizard-Spock Expansion, Sheldon e Raj discutem qual dos dois È o melhor: o filme Saturn 3 ou a sÈrie Deep Space 9. A sugest„o de Raj para a resoluÁ„o do impasse È uma disputa de Pedra-Papel-Tesoura. Contudo, Sheldon argumenta que, se as partes envolvidas se conhecem, entre 75% e 80% das disputas de Pedra-Papel-Tesoura terminam empatadas, e ent„o sugere o Pedra-Papel-Tesoura-Lagarto-Spock.
+No oitavo episodio da segunda temporada do seriado The Big Bang Theory, The Lizard-Spock Expansion, Sheldon e Raj discutem qual dos dois √© o melhor: o filme Saturn 3 ou a s√©rie Deep Space 9. A sugest√£o de Raj para a resolu√ß√£o do impasse √© uma disputa de Pedra-Papel-Tesoura. Contudo, Sheldon argumenta que, se as partes envolvidas se conhecem, entre 75% e 80% das disputas de Pedra-Papel-Tesoura terminam empatadas, e ent√£o sugere o Pedra-Papel-Tesoura-Lagarto-Spock.
 
-As regras do jogo proposto s„o:
+As regras do jogo proposto s√£o:
 
 a tesoura corta o papel;
 o papel embrulha a pedra;
 a pedra esmaga o lagarto;
 o lagarto envenena Spock;
-Spock destrÛi a tesoura;
+Spock destr√≥i a tesoura;
 a tesoura decapita o lagarto;
 o lagarto come o papel;
 o papel contesta Spock;
 Spock vaporiza a pedra;
 a pedra quebra a tesoura.
-Embora a situaÁ„o n„o se resolva no episÛdio (ambos escolhem Spock, resultando em um empate), n„o È dificil deduzir o que aconteceria se a disputa continuasse. Caso Sheldon vencesse, ele se deleitaria com a vitÛria, exclamando "Bazinga!"; caso Raj vencesse, ele concluiria que "Raj trapaceou!"; caso o resultado fosse empate, ele exigiria nova partida: "De novo!". Conhecidas as personagens do jogo escolhido por ambos, faÁa um programa que imprima a prov·vel reaÁ„o de Sheldon.
+Embora a situa√ß√£o n√£o se resolva no epis√≥dio (ambos escolhem Spock, resultando em um empate), n√£o √© dificil deduzir o que aconteceria se a disputa continuasse. Caso Sheldon vencesse, ele se deleitaria com a vit√≥ria, exclamando "Bazinga!"; caso Raj vencesse, ele concluiria que "Raj trapaceou!"; caso o resultado fosse empate, ele exigiria nova partida: "De novo!". Conhecidas as personagens do jogo escolhido por ambos, fa√ßa um programa que imprima a prov√°vel rea√ß√£o de Sheldon.
 
 Entrada
-A entrada consiste em uma sÈrie de casos de teste. A primeira linha contÈm um inteiro positivo T (T = 100), que representa o n˙mero de casos de teste. Cada caso de teste È representado por uma linha da entrada, contendo as escolhas de Sheldon e Raj, respectivamente, separadas por um espaÁo em branco. As escolha possÌveis s„o as personagens do jogo: pedra, papel, tesoura, lagarto e Spock.
+A entrada consiste em uma s√©rie de casos de teste. A primeira linha cont√©m um inteiro positivo T (T = 100), que representa o n√∫mero de casos de teste. Cada caso de teste √© representado por uma linha da entrada, contendo as escolhas de Sheldon e Raj, respectivamente, separadas por um espa√ßo em branco. As escolha poss√≠veis s√£o as personagens do jogo: pedra, papel, tesoura, lagarto e Spock.
 
 Saida
-Para cada caso de teste dever· ser impressa a mensagem "Caso #t: R", onde t È o n˙mero do caso de teste (cuja contagem se inicia no n˙mero um) e R È uma das trÍs reaÁıes possÌveis de Sheldon: "Bazinga!", "Raj trapaceou!", ou "De novo!".
+Para cada caso de teste dever√° ser impressa a mensagem "Caso #t: R", onde t √© o n√∫mero do caso de teste (cuja contagem se inicia no n√∫mero um) e R √© uma das tr√™s rea√ß√µes poss√≠veis de Sheldon: "Bazinga!", "Raj trapaceou!", ou "De novo!".
