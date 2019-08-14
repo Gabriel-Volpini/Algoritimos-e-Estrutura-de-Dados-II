@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define TAMANHO 12
+
+int main()
+{
+    float M[TAMANHO][TAMANHO];
+    int i, j;
+    int lelei;
+    float resultado = 0;
+    char T;
+
+    scanf("%d", &lelei);
+    scanf(" %c",&T);
+
+    for(i = 0; i < TAMANHO; i++){
+        for(j = 0; j < TAMANHO; j++){
+            scanf("%f",&M[i][j]);
+        }
+    }
+
+    if(T == 'S'){
+        for(i = 0; i < TAMANHO; i++){
+            resultado += M[lelei][i];
+        }
+        printf("%.1f\n", resultado);
+    }else{
+        for(i = 0; i < TAMANHO; i++){
+                resultado += M[lelei][i];
+            }
+        printf("%.1f\n", (resultado / TAMANHO));
+    }
+
+    return 0;
+}

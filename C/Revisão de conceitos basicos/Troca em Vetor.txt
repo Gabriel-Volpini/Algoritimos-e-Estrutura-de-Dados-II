@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+
+    int n[20] ;
+    int indice = 20 ;
+    int indiceReverso = 0 ;
+    int aux;
+    int i;
+
+    for( i = 0; i < indice; i++){
+        scanf("%d", &n[i]);
+    }
+
+    for( i = 0; i < indice/2; i++){
+        indiceReverso = (indice - 1) - i;
+        aux = n[i];
+        n[i] = n[indiceReverso];
+        n[indiceReverso] = aux;
+    }
+
+    for( i = 0; i < indice; i++){
+        printf("N[%d] = %d\n",i,n[i]);
+    }
+    return 0;
+}

@@ -1,0 +1,121 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    int rodadas = 0;
+    int rodadaAtual = 1;
+    char sheldon[20];
+    char raj[20];
+    int vitorioso = 0;  //1 - sheldon
+                        //2 - raj
+                        //3 - empate
+    scanf("%d", &rodadas);
+
+    while(rodadas != 0){
+
+    scanf("%s %s",&sheldon, &raj);
+
+
+    if( strncmp(sheldon, "pedra", 20) == 0 ){
+        if( strncmp(raj, "papel", 20) == 0)
+            vitorioso = 2;
+
+        else if( strncmp(raj, "lagarto", 20) == 0)
+            vitorioso = 1;
+
+        else if( strncmp(raj, "Spock", 20) == 0)
+            vitorioso = 2;
+
+        else if( strncmp(raj, "tesoura", 20) == 0)
+            vitorioso = 1;
+
+        else if( strncmp(raj, "pedra", 20) == 0)
+            vitorioso = 3;
+
+
+    }else if (strncmp(sheldon, "papel", 20) == 0){
+        if( strncmp(raj, "papel", 20) == 0)
+            vitorioso = 3;
+
+        else if( strncmp(raj, "lagarto", 20) == 0)
+            vitorioso = 2;
+
+        else if( strncmp(raj, "Spock", 20) == 0)
+            vitorioso = 1;
+
+        else if( strncmp(raj, "tesoura", 20) == 0)
+            vitorioso = 2;
+
+        else if( strncmp(raj, "pedra", 20) == 0)
+            vitorioso = 1;
+
+    }else if (strncmp(sheldon, "tesoura", 20) == 0){
+        if(strncmp(raj, "papel", 20) == 0)
+            vitorioso = 1;
+
+        else if( strncmp(raj, "lagarto", 20) == 0)
+            vitorioso = 1;
+
+        else if( strncmp(raj, "Spock", 20) == 0)
+            vitorioso = 2;
+
+        else if( strncmp(raj, "tesoura", 20) == 0)
+            vitorioso = 3;
+
+        else if( strncmp(raj, "pedra", 20) == 0)
+            vitorioso = 2;
+
+
+    }else if (strncmp(sheldon, "lagarto", 20) == 0){
+        if( strncmp(raj, "papel", 20) == 0)
+            vitorioso = 1;
+
+        else if( strncmp(raj, "lagarto", 20) == 0)
+            vitorioso = 3;
+
+        else if(strncmp(raj, "Spock", 20) == 0)
+            vitorioso = 1;
+
+        else if( strncmp(raj, "tesoura", 20) == 0)
+            vitorioso = 2;
+
+        else if( strncmp(raj, "pedra", 20) == 0)
+            vitorioso = 2;
+
+
+    }else if (strncmp(sheldon, "Spock", 20) == 0){
+
+        if( strncmp(raj, "papel", 20) == 0)
+            vitorioso = 2;
+
+        else if( strncmp(raj, "lagarto", 20) == 0)
+            vitorioso = 2;
+
+        else if(strncmp(raj, "Spock", 20) == 0)
+            vitorioso = 3;
+
+        else if( strncmp(raj, "tesoura", 20) == 0)
+            vitorioso = 1;
+
+        else if( strncmp(raj, "pedra", 20) == 0)
+            vitorioso = 1;
+    }
+
+    switch(vitorioso){
+    case 1:
+        printf("Caso #%d: Bazinga!\n", rodadaAtual);
+        break;
+    case 2:
+        printf("Caso #%d: Raj trapaceou!\n", rodadaAtual);
+        break;
+    case 3:
+        printf("Caso #%d: De novo!\n", rodadaAtual);
+        break;
+    }
+    rodadas--;
+    rodadaAtual++;
+}
+    return 0;
+}

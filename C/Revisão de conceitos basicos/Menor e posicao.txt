@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+
+    int n ;
+    int x[1000] ;
+    int i = 0;
+    int posicao;
+    int menor;
+
+
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++){
+        scanf("%d",&x[i]);
+    }
+
+    menor = x[0];
+
+    while( n != 0){
+        if(x[n] < menor){
+            menor = x[n];
+            posicao = n;
+        }
+        n--;
+    }
+
+    printf("Menor valor: %d\nPosicao: %d\n", menor,posicao);
+    return 0;
+}
