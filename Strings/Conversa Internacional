@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+
+int main()
+{
+    int casos = 0, tamanhoGrupo = 0, i;
+    char idiomas[100][20];
+    bool iguais = true;
+
+    scanf("%d", &casos);
+    while(casos != 0){
+        scanf("%d", &tamanhoGrupo);
+
+        for(i = 0; i < tamanhoGrupo; i++){
+            scanf("%s", idiomas[i]);
+        }
+
+        for(i = 0; i < tamanhoGrupo - 1; i++){
+            if( strncmp(idiomas[i],idiomas[i+1], 20) != 0){
+
+                iguais = false;
+            }
+        }
+
+        printf(iguais ? "%s\n" : "ingles\n", idiomas[0]);
+        casos--;
+        iguais = true;
+    }
+}
