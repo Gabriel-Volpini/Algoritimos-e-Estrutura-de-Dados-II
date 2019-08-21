@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+
+int main()
+{
+    int casos = 0, i,aux = -1;
+    char palavra[50];
+    char segredo[50]={""};
+    char letra;
+
+    scanf("%d", &casos);
+    while(casos != 0){
+        scanf("%s", &palavra);
+        for(i = strlen(palavra); i > -1 ; i--){
+            if(isupper(palavra[i])== 0 && isalpha(palavra[i])){
+                printf("%c", palavra[i]);
+            }
+        }
+        casos--;
+        printf("\n");
+    }
+}
