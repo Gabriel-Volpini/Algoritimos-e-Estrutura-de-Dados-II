@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <math.h>
 #include <time.h>
 #include <windows.h>
@@ -69,15 +70,24 @@ void Gerador(struct Ponto v[], int tamanho){
 
 //-------------------------------------------------------------------------------------------------------------------------------------
 
+void GerarArquivo(int testeNumber, FILE *pont_arq){
+    char titulo[4] = "1";       ///AKIII EU PAREI AKUI
+    strcat(titulo,".txt");
+    pont_arq = fopen(titulo, "w");//abrindo o arquivo
+}
+
 int main(){
     struct Ponto *vetor;
     clock_t start_time, end_time;
     double cpu_time_used, memory_used;
     size_t peakSize;
+    char nomeArquivo[10];
+    FILE *pont_arq;
+
+    GerarArquivo(nomeArquivo, pont_arq);                                                //Geração do arquivo de resultado
 
 
-
-    for(int i = 1000; i < 100000; i += 1000){
+    for(int i = 10000; i < 1000000; i += 10000){
             vetor = Alocador(i);                                                        //alocaação dinamica
             Gerador(vetor, i);                                                          //Alocalção de valores aleatorios
             start_time = clock();                                                       //inicia tempo
