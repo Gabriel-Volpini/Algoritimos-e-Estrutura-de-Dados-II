@@ -1,0 +1,95 @@
+//------------------------------------------------------------------------------------------------------------------------------------------------
+//                                                              GABRIEL NAGEM VOLPINI
+//                                                        EXERCICIO DE CONTAGEM DE TEMPO E MEMORIA
+//                                                                      AEDS II
+//                                                                       2019
+//------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
+#include <windows.h>
+#include <winbase.h>
+#include <psapi.h>
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------
+
+double get_memory_used_MB(){
+    PROCESS_MEMORY_COUNTERS info;
+    GetProcessMemoryInfo( GetCurrentProcess( ), &info, sizeof(info) );
+    return (double)info.PeakWorkingSetSize/ (1024*1024);
+}
+
+//--------------------------------------------------------------------------------------------------------------------------------------
+
+struct Ponto {
+    int x , y;
+};
+
+//-------------------------------------------------------------------------------------------------------------------------------------
+
+float Distancia_Euclidiana(struct Ponto p1, struct Ponto p2){
+    return sqrt(pow((p1.x - p2.x), 2) + pow((p1.y - p2.y), 2));
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------
+
+struct Ponto pontoProximo(struct Ponto vetor[], struct Ponto P, int tamanho){
+    float maior = 9999; //Fora do alcance do gerador aleatorio
+    struct Ponto retorno;
+
+    for(int i = 0; i < tamanho; i++){
+        if(maior > Distancia_Euclidiana(P, vetor[i])){
+            maior =  Distancia_Euclidiana(P, vetor[i]);
+            retorno = vetor[i];
+        }
+    }
+    return retorno;
+
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------
+
+struct Ponto* Alocador(int tamanho){
+    struct Ponto *vetor = (struct Ponto*)malloc(tamanho * sizeof(struct Ponto));
+};
+
+//-------------------------------------------------------------------------------------------------------------------------------------
+
+void Gerador(struct Ponto v[], int tamanho){
+
+    srand(time(0));
+    for(int i = 0; i < tamanho; i++){
+        v[i].x = rand()%100;
+        v[i].y = rand()%100;
+    }
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------
+
+int main(){
+    struct Ponto *vetor;
+    clock_t start_time, end_time;
+    double cpu_time_used, memory_used;
+    size_t peakSize;
+
+
+
+    for(int i = 1000; i < 100000; i += 1000){
+            vetor = Alocador(i);                                                        //alocaação dinamica
+            Gerador(vetor, i);                                                          //Alocalção de valores aleatorios
+            start_time = clock();                                                       //inicia tempo
+            pontoProximo(vetor, vetor[i], i);                                           //Calculo do ponto proximo
+            end_time = clock();
+            cpu_time_used = ((double) (end_time - start_time)) / CLOCKS_PER_SEC;
+            memory_used = get_memory_used_MB();
+            printf("%f s - %f MB\n",cpu_time_used, memory_used);                        //termino tempo
+            free(vetor);
+    }
+
+    return 0;
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------
