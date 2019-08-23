@@ -1,3 +1,5 @@
+
+
 //------------------------------------------------------------------------------------------------------------------------------------------------
 //                                                              GABRIEL NAGEM VOLPINI
 //                                                        EXERCICIO DE CONTAGEM DE TEMPO E MEMORIA
@@ -70,12 +72,6 @@ void Gerador(struct Ponto v[], int tamanho){
 
 //-------------------------------------------------------------------------------------------------------------------------------------
 
-void GerarArquivo(int testeNumber, FILE *pont_arq){
-    char titulo[4] = "1";       ///AKIII EU PAREI AKUI
-    strcat(titulo,".txt");
-    pont_arq = fopen(titulo, "w");//abrindo o arquivo
-}
-
 int main(){
     struct Ponto *vetor;
     clock_t start_time, end_time;
@@ -83,22 +79,40 @@ int main(){
     size_t peakSize;
     char nomeArquivo[10];
     FILE *pont_arq;
+    char titulo[20];
 
-    GerarArquivo(nomeArquivo, pont_arq);                                                //Geração do arquivo de resultado
+    for(int k = 1; k < 6; k++){
 
+       if(k == 1){
+            strcpy(titulo, "um.txt");
+        }else if(k == 2){
+            strcpy(titulo,"dois.txt");
+        }else if(k == 3){
+            strcpy(titulo,"tres.txt");
+        }else if(k == 4){
+            strcpy(titulo,"quatro.txt");
+        }else if(k == 5){
+            strcpy(titulo,"cinco.txt");
+        }
 
-    for(int i = 10000; i < 1000000; i += 10000){
-            vetor = Alocador(i);                                                        //alocaação dinamica
-            Gerador(vetor, i);                                                          //Alocalção de valores aleatorios
-            start_time = clock();                                                       //inicia tempo
-            pontoProximo(vetor, vetor[i], i);                                           //Calculo do ponto proximo
-            end_time = clock();
-            cpu_time_used = ((double) (end_time - start_time)) / CLOCKS_PER_SEC;
-            memory_used = get_memory_used_MB();
-            printf("%f s - %f MB\n",cpu_time_used, memory_used);                        //termino tempo
-            free(vetor);
+        pont_arq = fopen(titulo, "w+");                                                     //abrindo o arquivo
+
+        for(int i = 1000; i < 100000; i += 1000){
+                vetor = Alocador(i);                                                        //alocaação dinamica
+                Gerador(vetor, i);                                                          //Alocalção de valores aleatorios
+                start_time = clock();                                                       //inicia tempo
+                pontoProximo(vetor, vetor[i], i);                                           //Calculo do ponto proximo
+                end_time = clock();
+                cpu_time_used = ((double) (end_time - start_time)) / CLOCKS_PER_SEC;
+                memory_used = get_memory_used_MB();
+                fprintf(pont_arq,"%f\t%f\n",cpu_time_used, memory_used);                        //termino tempo
+                printf("%f\t%f\n",cpu_time_used, memory_used);
+                free(vetor);
+        }
+        printf("-------------------------------\n");
+        fclose(pont_arq);
     }
-
+    
     return 0;
 }
 
