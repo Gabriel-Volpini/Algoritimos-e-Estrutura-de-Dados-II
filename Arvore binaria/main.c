@@ -49,6 +49,39 @@ void adiciona(Lista *X, ArvoreBinaria *A){
         add(X,TEMP);
 }
 
+void pesquisaPorNome(Lista *X, ArvoreBinaria *A, int tamanho){
+    int selecionado;
+    int y,resBinario;
+    Registro resArvore;
+    system('cls');
+    printf("1 - PesquisaBinaria\n2 - Pesquisa em arvore:\n");
+    scanf("%d",&selecionado);
+    printf("Codigo a ser pesquisado:");
+    scanf("%d",&y);
+    switch(selecionado){
+        case 1:
+            resBinario = PesquisaBinaria_codigo(*X,tamanho,y);
+            printf("\nCODIGO: %d",X->dados[resBinario].codigo);
+            printf("\nNOME: %s\n",X->dados[resBinario].nome);
+            printf("DATA DE NACIMENTO: %s\n",X->dados[resBinario].data_nasci);
+            printf("EMAIL: %s\n",X->dados[resBinario].email);
+            printf("TELEFONE: %s\n\n",X->dados[resBinario].telefone);
+            break;
+        case 2:
+            resArvore = Pesquisar_Codigo(A, y); 
+            printf("\nCODIGO: %d",resArvore.codigo);
+            printf("\nNOME: %s\n",resArvore.nome);
+            printf("DATA DE NACIMENTO: %s\n",resArvore.data_nasci);
+            printf("EMAIL: %s\n",resArvore.email);
+            printf("TELEFONE: %s\n\n",resArvore.telefone);
+            break;
+        default:
+            printf("Valor invalido\n");
+            break;
+    }
+    return;
+}
+
 void menu(int selecionado, Lista *X, int n, ArvoreBinaria *A){
     int x;
     switch(selecionado){
@@ -87,15 +120,8 @@ void menu(int selecionado, Lista *X, int n, ArvoreBinaria *A){
 
         case 5:
             system("cls");
-            printf("Codigo a ser pesquisado:");
-            int y,res;
-            scanf("%d",&y);
-            res = PesquisaBinaria_code(*X,n,y);
-            printf("\nCODIGO: %d",X->dados[res].codigo);
-            printf("\nNOME: %s\n",X->dados[res].nome);
-            printf("DATA DE NACIMENTO: %s\n",X->dados[res].data_nasci);
-            printf("EMAIL: %s\n",X->dados[res].email);
-            printf("TELEFONE: %s\n\n",X->dados[res].telefone);
+            pesquisaPorNome(X,A,n);
+
             break;
         case 6:
             break;
@@ -112,6 +138,8 @@ void menu(int selecionado, Lista *X, int n, ArvoreBinaria *A){
     }
 }
 
+
+
 int main()
 {
     int n;
@@ -126,6 +154,7 @@ int main()
 
 
     while(selecionado!=0){
+        system("cls");
         printf("=========================================================\n\n");
         printf("1 - Inserir contato\n");
         printf("2 - Remover contato\n");
