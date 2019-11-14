@@ -25,8 +25,6 @@ void create_lista(Lista *l, int n){
     l->dados= (int*)malloc(n*sizeof(int));
 }
 //==============================
-
-
 bool add(Lista *l,Telefonica dado){
     if(l->tam == l->MAX)
         return false;
@@ -101,7 +99,7 @@ void ordenado_codigo(Lista *l,int n){
 
 }
 
-int PesquisaBinaria_code(Lista X, int n, int x){
+int PesquisaBinaria_codigo(Lista X, int n, int x){
 
     int inicio = 0, fim = n-1, meio;
 
