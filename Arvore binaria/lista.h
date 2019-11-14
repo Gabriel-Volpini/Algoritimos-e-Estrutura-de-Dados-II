@@ -22,7 +22,7 @@ typedef struct Lista{
 void create_lista(Lista *l, int n){
     l->MAX = n;
     l->tam = 0;
-    l->dados= (int*)malloc(n*sizeof(int));
+    l->dados= (Telefonica*)malloc(n*sizeof(Telefonica));
 }
 //==============================
 bool add(Lista *l,Telefonica dado){
@@ -108,6 +108,25 @@ int PesquisaBinaria_codigo(Lista X, int n, int x){
         if(X.dados[meio].codigo == x)
             return meio;
         if(X.dados[meio].codigo < x)
+            inicio = meio + 1;
+        else
+            fim = meio-1;
+    }
+
+    return -1;
+}
+
+int PesquisaBinaria_nome(Lista X, int n, char x[]){
+
+    int inicio = 0, fim = n-1, meio;
+
+    printf("strcmp, %d", strcmp(X.dados[meio].codigo, x));
+
+    while(inicio <= fim){
+        meio = (inicio+fim)/2;
+        if(strcmp(X.dados[meio].nome, x) == 0)
+            return meio;
+        if(strcmp(X.dados[meio].nome, x) < 0)
             inicio = meio + 1;
         else
             fim = meio-1;
