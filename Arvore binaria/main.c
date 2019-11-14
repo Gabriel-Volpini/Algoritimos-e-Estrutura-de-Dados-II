@@ -15,15 +15,15 @@ Registro ConverterTelefonicaEmRegistro(Telefonica T){
         return ARVORE;
 }
 
-void remover(int x,int n,Lista *l, ArvoreBinaria *A){
+//  void remover(int x,int n,Lista *l, ArvoreBinaria *A){
 
-    for(int i = 0 ; i < n ; i++){
-        if(l->dados[i].codigo == x){
-            remove_at(l,i);
-        }
-        Remover_Arvore(A, x);
-    }
-}
+//      for(int i = 0 ; i < n ; i++){
+//          if(l->dados[i].codigo == x){
+//              remove_at(l,i);
+//          }
+//          Remover_Arvore(A, x);
+//      }
+//  }
 
 void adiciona(Lista *X, ArvoreBinaria *A){
         Telefonica TEMP;
@@ -49,43 +49,72 @@ void adiciona(Lista *X, ArvoreBinaria *A){
         add(X,TEMP);
 }
 
-void pesquisaPorNome(Lista *X, ArvoreBinaria *A, int tamanho){
-    int selecionado;
-    int y,resBinario;
-    Registro resArvore;
-    system('cls');
-    printf("1 - PesquisaBinaria\n2 - Pesquisa em arvore:\n");
-    scanf("%d",&selecionado);
-    printf("Codigo a ser pesquisado:");
-    scanf("%d",&y);
-    switch(selecionado){
-        case 1:
-            resBinario = PesquisaBinaria_codigo(*X,tamanho,y);
-            printf("\nCODIGO: %d",X->dados[resBinario].codigo);
-            printf("\nNOME: %s\n",X->dados[resBinario].nome);
-            printf("DATA DE NACIMENTO: %s\n",X->dados[resBinario].data_nasci);
-            printf("EMAIL: %s\n",X->dados[resBinario].email);
-            printf("TELEFONE: %s\n\n",X->dados[resBinario].telefone);
-            break;
-        case 2:
-            resArvore = Pesquisar_Codigo(A, y); 
-            printf("\nCODIGO: %d",resArvore.codigo);
-            printf("\nNOME: %s\n",resArvore.nome);
-            printf("DATA DE NACIMENTO: %s\n",resArvore.data_nasci);
-            printf("EMAIL: %s\n",resArvore.email);
-            printf("TELEFONE: %s\n\n",resArvore.telefone);
-            break;
-        default:
-            printf("Valor invalido\n");
-            break;
-    }
-    return;
-}
+// void pesquisaPorCodigo(Lista *X, ArvoreBinaria *A, int tamanho){
+//     int selecionado;
+//     int y,resBinario;
+//     Registro resArvore;
+//     printf("1 - PesquisaBinaria\n2 - Pesquisa em arvore:\n");
+//     scanf("%d",&selecionado);
+//     printf("Codigo a ser pesquisado:");
+//     scanf("%d",&y);
+//     switch(selecionado){
+//         case 1:
+//             resBinario = PesquisaBinaria_codigo(*X,tamanho,y);
+//             printf("\nCODIGO: %d",X->dados[resBinario].codigo);
+//             printf("\nNOME: %s\n",X->dados[resBinario].nome);
+//             printf("DATA DE NACIMENTO: %s\n",X->dados[resBinario].data_nasci);
+//             printf("EMAIL: %s\n",X->dados[resBinario].email);
+//             printf("TELEFONE: %s\n\n",X->dados[resBinario].telefone);
+//             break;
+//         case 2:
+//             resArvore = Pesquisar_Codigo(A, y);
+//             printf("\nCODIGO: %d",resArvore.codigo);
+//             printf("\nNOME: %s\n",resArvore.nome);
+//             printf("DATA DE NACIMENTO: %s\n",resArvore.data_nasci);
+//             printf("EMAIL: %s\n",resArvore.email);
+//             printf("TELEFONE: %s\n\n",resArvore.telefone);
+//             break;
+//         default:
+//             printf("Valor invalido\n");
+//             break;
+//     }
+//     return;
+// }
+
+// void pesquisaPorNome(Lista *X, ArvoreBinaria *A, int tamanho){
+//     int selecionado;
+//     int resBinario;
+//     char y[100];
+//     Registro resArvore;
+
+//     printf("1 - PesquisaBinaria\n2 - Pesquisa em arvore:\n");
+//     scanf("%d",&selecionado);
+//     printf("Nome a ser pesquisado:");
+//     scanf(" %s",&y);
+
+//     switch(selecionado){
+//         case 1:
+//             resBinario = PesquisaBinaria_nome(*X,tamanho,y);
+//             printf("\nCODIGO: %d",X->dados[resBinario].codigo);
+//             printf("\nNOME: %s\n",X->dados[resBinario].nome);
+//             printf("DATA DE NACIMENTO: %s\n",X->dados[resBinario].data_nasci);
+//             printf("EMAIL: %s\n",X->dados[resBinario].email);
+//             printf("TELEFONE: %s\n\n",X->dados[resBinario].telefone);
+//             break;
+//         case 2:
+
+//             break;
+//         default:
+//             printf("Valor invalido\n");
+//             break;
+//     }
+//     return;
+// }
 
 void menu(int selecionado, Lista *X, int n, ArvoreBinaria *A){
     int x;
-    switch(selecionado){
-    case 1:
+     switch(selecionado){
+     case 1:
             system("cls");
             adiciona(X, A);
             printf("LISTA: ");
@@ -93,15 +122,16 @@ void menu(int selecionado, Lista *X, int n, ArvoreBinaria *A){
             printf("ARVORE: ");
             ImprimirPreOrdem_Arvore(A->raiz);
             getch();
-            break;
+           break;
 
         case 2:
-            system("cls");
-            printf("Insira codigo do contato a ser removido: \n");
-            scanf("%d",&x);
-            remover(x,n,X,A);
-            print_lista(*X);
-            getch();
+            // system("cls");
+            // printf("Insira codigo do contato a ser removido: \n");
+            // scanf("%d",&x);
+            // remover(x,n,X,A);
+            // print_lista(*X);
+            // getch();
+            // system('PAUSE');
             break;
 
         case 3:
@@ -109,36 +139,38 @@ void menu(int selecionado, Lista *X, int n, ArvoreBinaria *A){
             ordenado_nome(X,n);
             print_lista(*X);
             getch();
+            system('PAUSE');
             break;
 
-        case 4:
-            system("cls");
-            ordenado_nome(X,n);
-            print_lista(*X);
-            getch();
-            break;
+    //     case 4:
+    //         system("cls");
+    //         ordenado_nome(X,n);
+    //         print_lista(*X);
+    //         getch();
+    //         system('PAUSE');
+    //         break;
 
-        case 5:
-            system("cls");
-            pesquisaPorNome(X,A,n);
-
-            break;
-        case 6:
-            break;
-        case 7:
-            break;
-        case 8:
-            break;
-        case 0:
-            printf("Fechando..");
-            break;
-        default:
-        system("cls");
-        printf("Valor invalido..\n");
-    }
+    //     case 5:
+    //         system("cls");
+    //         pesquisaPorCodigo(X,A,n);
+    //         system('PAUSE');
+    //         break;
+    //     case 6:
+    //          system("cls");
+    //          pesquisaPorNome(X,A,n);
+    //         system('PAUSE');
+    //         break;
+    //     case 7:
+    //         system('PAUSE');
+    //         break;
+    //     case 8:
+    //         break;
+    //     case 0:
+    //
+         default:
+         break;
+     }
 }
-
-
 
 int main()
 {
@@ -153,11 +185,13 @@ int main()
     int selecionado = 100;
 
 
-    while(selecionado!=0){
+    while(1){
         system("cls");
+        ImprimirPreOrdem_Arvore(A.raiz);
+        print_lista(X);
         printf("=========================================================\n\n");
         printf("1 - Inserir contato\n");
-        printf("2 - Remover contato\n");
+        // printf("2 - Remover contato\n");
         printf("3 - Imprimir ordenado por nome\n");
         printf("4 - Imprimir ordenado por data de nascimento\n");
         printf("5 - Pesquisar por codigo\n");
@@ -167,9 +201,13 @@ int main()
         printf("0 - Sair\n");
         printf("\n=========================================================\n");
         scanf("%d",&selecionado);
+        if(selecionado == 0){
+           destroy_lista(&X);
+            system("PAUSE");
+            return 0;
+        }
         menu(selecionado, &X, n, &A);
     }
 
-
-    return 0;
+   return 0;
 }
