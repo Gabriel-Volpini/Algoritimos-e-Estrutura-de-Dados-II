@@ -1,6 +1,6 @@
 #ifndef ARVORE_H_INCLUDED
 #define ARVORE_H_INCLUDED
-// DEFINIÇÃO DO TIPO REGISTRO
+// DEFINIÃ‡ÃƒO DO TIPO REGISTRO
 
 typedef struct Registro{
     int chave;
@@ -11,13 +11,13 @@ typedef struct Registro{
     char email[50];
 }Registro;
 
-// DEFINIÇÃO DO TIPO NO
+// DEFINIÃ‡ÃƒO DO TIPO NO
 typedef struct No{
     Registro dado;
     struct No *esq, *dir;
 }No;
 //===================================================================
-// DEFINIÇÃO DO TIPO ÁRVORE
+// DEFINIÃ‡ÃƒO DO TIPO ÃRVORE
 typedef struct {
     No *raiz;
 }ArvoreBinaria;
@@ -26,19 +26,19 @@ void Inicializar_Arvore(ArvoreBinaria *arvore){
     arvore->raiz = NULL;
 }
 //===================================================================
-Registro PesquisarNo_Arvore(No *no, int chave){
+Registro PesquisarNoArvore_Codigo(No *no, int chave){
     if (no == NULL) {
         Registro r;
         r.chave = -1;
         return r;
     }
-    else if (chave < no->dado.chave) return PesquisarNo_Arvore (no->esq, chave);
-    else if (chave > no->dado.chave) return PesquisarNo_Arvore (no->esq, chave);
+    else if (chave < no->dado.chave) return PesquisarNoArvore_Codigo (no->esq, chave);
+    else if (chave > no->dado.chave) return PesquisarNoArvore_Codigo (no->esq, chave);
     else return no->dado;
 }
 
-Registro Pesquisar (ArvoreBinaria *arvore, int chave){
-    return PesquisarNo_Arvore(arvore->raiz, chave);
+Registro Pesquisar_Codigo (ArvoreBinaria *arvore, int chave){
+    return PesquisarNoArvore_Codigo(arvore->raiz, chave);
 }
 //===================================================================
 No* InserirNo_Arvore(No *no, Registro dado){
@@ -73,13 +73,13 @@ No* RemoverNo_Arvore (No *no, int chave) {
     if (no == NULL) printf("Erro: Registro nao encontrado");
     else if (chave < no->dado.chave) no->esq = RemoverNo_Arvore (no->esq, chave);
     else if (chave > no->dado.chave) no->dir = RemoverNo_Arvore (no->dir, chave);
-    else { // REMOÇÃO CASO 1 E CASO 2
+    else { // REMOÃ‡ÃƒO CASO 1 E CASO 2
       if(no->dir == NULL || no->esq == NULL){
         No *temp = no;
         if (no->dir == NULL) no = no->esq;
         else no = no->dir;
         free(temp);
-      } // REMOÇÃO CASO 3
+      } // REMOÃ‡ÃƒO CASO 3
       else no->esq = antecessor_Arvore (no, no->esq);
     }
     return no;
