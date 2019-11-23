@@ -108,6 +108,7 @@ int PesquisaBinaria_codigo(Lista X, int x){
 
 int PesquisaBinaria_nome(Lista X, char nomeP[]){
     int inicio = 0, fim = X.tam-1, meio;
+
     while(inicio <= fim){
         meio = (inicio+fim)/2;
         if(strcmp(X.dados[meio].nome,nomeP)==0)
@@ -125,7 +126,6 @@ int PesquisaBinaria_data(Lista X,char nomeP[]){
 
     int inicio = 0, fim = X.tam-1, meio;
 
-
     while(inicio <= fim){
         meio = (inicio+fim)/2;
         if(strcmp(X.dados[meio].data_nasci,nomeP)==0)
@@ -141,7 +141,6 @@ int PesquisaBinaria_data(Lista X,char nomeP[]){
 
 int PesquisaBinaria_email(Lista X,char nomeP[]){
 
-    ordenado_email(&X);
     int inicio = 0, fim = X.tam-1, meio;
 
 
@@ -158,6 +157,22 @@ int PesquisaBinaria_email(Lista X,char nomeP[]){
     return -1;
 }
 
+int PesquisaBinaria_telefone(Lista X,char nomeP[]){
+
+    int inicio = 0, fim = X.tam-1, meio;
+
+    while(inicio <= fim){
+        meio = (inicio+fim)/2;
+        if(strcmp(X.dados[meio].telefone,nomeP)==0)
+            return meio;
+        if(strcmp(X.dados[meio].telefone,nomeP)<0)
+            inicio = meio + 1;
+        else
+            fim = meio-1;
+    }
+
+    return -1;
+}
 
 
 
@@ -169,6 +184,23 @@ void print_lista(Lista l){
 }
 void print_lista_element(Lista l, int i){
     printf("\n[%d]CODIGO: %d\nNOME: %s \nTELEFONE:%s \nDATA DE NASCIMENTO: %s\nEMAIL: %s\n", i, l.dados[i].codigo,l.dados[i].nome,l.dados[i].telefone,l.dados[i].data_nasci,l.dados[i].email);
+}
+void print_lista_onFile(Lista l, FILE *file){
+    fprintf(file, "\nSize: %d\n", l.tam);
+    for(int i = 0; i < l.tam; i++)
+        fprintf(file, "\nCODIGO: %d\nNOME: %s \nTELEFONE:%s \nDATA DE NASCIMENTO: %s\nEMAIL: %s\n", l.dados[i].codigo,l.dados[i].nome,l.dados[i].telefone,l.dados[i].data_nasci,l.dados[i].email);
+
+}
+
+void scanf_lista_onFile(Lista *l, FILE *file){\
+    int size = 0;
+    Telefonica dado;
+    fscanf(file, "\nSize: %d\n", &size);
+
+    for(int i = 0; i < size; i++){
+        fscanf(file, "\nCODIGO: %d\nNOME: %s \nTELEFONE:%s \nDATA DE NASCIMENTO: %s\nEMAIL: %s\n", &dado.codigo, &dado.nome, &dado.telefone, &dado.data_nasci, &dado.email);
+        lista_add(l,dado);
+    }
 }
 //==============================
 void destroy_lista(Lista *l){

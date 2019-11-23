@@ -1,9 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 #include "structs.h"
 #include "lista.h"
 
-void adiciona(Lista *lista){
+//! 1 - criar contato
+//! 2 - excluir contato
+//// 3 - listar por ordenado_nome
+//// 4 - listar por data de nascimento
+//! 5 - pesquisar por tudo
+//! 6 - acarregar dados do arquivo 
+//// 7 - salvar em arquivo
+//! 8 - sair
+
+
+void adiciona(Lista *lista){ //TODO arvore e hash
         Telefonica TEMP;
         printf("Digite o codigo:\n");
             scanf("%d",&TEMP.codigo);
@@ -23,34 +35,34 @@ void adiciona(Lista *lista){
         fflush(stdin);
 //=============LISTA=================
         lista_add(lista,TEMP);
-//==================================
+//===================================
 }
-void remover(Lista *lista){
+void remover(Lista *lista){ //TODO arvore e hash
     int codigo, posicao;
     printf("Insira o codigo a ser removido\n");
     scanf("%d",&codigo);
 //=============LISTA=================
     posicao = PesquisaBinaria_codigo(*lista, codigo);
     remove_lista_at(lista, posicao);
-//==================================
+//===================================
 }
 void imprimir_Nome(Lista *lista){
 //=============LISTA=================
     ordenado_nome(lista);
     print_lista(*lista);
-//==================================
+//===================================
 }
 
 void imprimir_Data(Lista *lista){
 //=============LISTA=================
     ordenado_data(lista);
     print_lista(*lista);
-//==================================
+//===================================
 }
 
-void pesquisar_menu(Lista *lista){
+void pesquisar_menu(Lista *lista){ //TODO arvore e hash
     int selecionado;
-    printf("1 - pesquisa binaria\n2 - pesquisa em arvore\n3 - pesquisa em hash\n");
+    printf("1 - pesquisa binaria\n2 - pesquisa em arvore\n3 - pesquisa em hash\n"); 
     scanf("%d",&selecionado);
     switch(selecionado){
         case 1:
@@ -60,47 +72,90 @@ void pesquisar_menu(Lista *lista){
         printf("Valor invalido\n");
     }
 }
+
+//=============LISTA=================
 void pesquisar_binaria(Lista *lista){
-    int selecionado;
-    int valor;
-    int posicao;
+    int selecionado,posicaoDoElementoPesquisado, scanfIntValue;
+    char scanfStringVlue[100];
+
     printf("1 - Codigo\n2 - Nome\n3 - Data\n4 - email\n5 - telefone\n");
     scanf("%d", &selecionado);
     switch(selecionado){
         case 1:
             ordenado_codigo(lista);
-            printf("digite o valor: ");
-            scanf("%d", &valor);
-            posicao = PesquisaBinaria_codigo(*lista, valor);
+            printf("digite o codigo: ");
+            scanf("%d", &scanfIntValue);
+            posicaoDoElementoPesquisado = PesquisaBinaria_codigo(*lista, scanfIntValue);
             break;
         case 2:
+            ordenado_nome(lista);
+            printf("digite o nome:\n");
+            scanf(" %s",&scanfStringVlue);
+            posicaoDoElementoPesquisado = PesquisaBinaria_nome(*lista, scanfStringVlue);
             break;
         case 3:
+            ordenado_data(lista);
+            printf("digite a data:\n");
+            scanf(" %s",&scanfStringVlue);
+            posicaoDoElementoPesquisado = PesquisaBinaria_data(*lista, scanfStringVlue);
             break;
         case 4:
+            ordenado_email(lista);
+            printf("digite o email:\n");
+            scanf(" %s",&scanfStringVlue);
+            posicaoDoElementoPesquisado = PesquisaBinaria_email(*lista, scanfStringVlue);
             break;
         case 5:
+            ordenado_telefone(lista);
+            printf("digite o telefone:\n");
+            scanf(" %s",&scanfStringVlue);
+            posicaoDoElementoPesquisado = PesquisaBinaria_telefone(*lista, scanfStringVlue);
             break;
         default:
             printf("Valor invalido\n");
             break;
     }
-    print_lista_element(*lista, posicao);
+    posicaoDoElementoPesquisado != -1 ? 
+        print_lista_element(*lista, posicaoDoElementoPesquisado) :
+        printf("Elemento nao encontrado\n");
+}
+//===================================
+
+void salvar(Lista *lista){
+    char nomeArquivo[50];
+    printf("insira o nome do arquivo (sem .txt)\n");
+    scanf(" %s",&nomeArquivo);
+    strcat(nomeArquivo,".txt");
+    FILE *arquivo = fopen(nomeArquivo,"w");
+    print_lista_onFile(*lista, arquivo);
+    fclose(arquivo);
 }
 
-int main()
-{
+void abrirArquivo(Lista *lista){//TODO arvore e hash
+    char nomeArquivo[50];
+    printf("insira o nome do arquivo (sem .txt)\n");
+    scanf(" %s",&nomeArquivo);
+    strcat(nomeArquivo,".txt");
+    FILE *arquivo = fopen(nomeArquivo,"r");
+    scanf_lista_onFile(lista, arquivo);
+    if(arquivo == NULL){
+        printf("Arquivo nao encontrado\n");
+        return;
+    }
+
+    fclose(arquivo);
+}
+
+int main(){
     Lista lista;
     create_lista(&lista, 10);
 
-    Telefonica objeto;
-    adiciona(&lista);
-    adiciona(&lista);
-
+    abrirArquivo(&lista);
     pesquisar_menu(&lista);
 
-    remover(&lista);
-    print_lista(lista);
 
+//============ FREE ==================
+    destroy_lista(&lista);
+//====================================
     return 0;
 }
