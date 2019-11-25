@@ -179,16 +179,22 @@ int PesquisaBinaria_telefone(Lista X,char nomeP[]){
 //==============================
 void print_lista(Lista l){
     printf("\nSize: %d\n", l.tam);
-    for(int i = 0; i < l.tam; i++)
-        printf("\n[%d]CODIGO: %d\nNOME: %s \nTELEFONE:%s \nDATA DE NASCIMENTO: %s\nEMAIL: %s\n", i, l.dados[i].codigo,l.dados[i].nome,l.dados[i].telefone,l.dados[i].data_nasci,l.dados[i].email);
+    printf("===========================\n");
+    for(int i = 0; i < l.tam; i++){
+        printf("\nCODIGO: %d\nNOME: %s \nTELEFONE:%s \nDATA DE NASCIMENTO: %s\nEMAIL: %s\n",l.dados[i].codigo,l.dados[i].nome,l.dados[i].telefone,l.dados[i].data_nasci,l.dados[i].email);
+        printf("===========================\n");
+    }
 }
 void print_lista_element(Lista l, int i){
-    printf("\n[%d]CODIGO: %d\nNOME: %s \nTELEFONE:%s \nDATA DE NASCIMENTO: %s\nEMAIL: %s\n", i, l.dados[i].codigo,l.dados[i].nome,l.dados[i].telefone,l.dados[i].data_nasci,l.dados[i].email);
+    printf("\nCODIGO: %d\nNOME: %s \nTELEFONE:%s \nDATA DE NASCIMENTO: %s\nEMAIL: %s\n", l.dados[i].codigo,l.dados[i].nome,l.dados[i].telefone,l.dados[i].data_nasci,l.dados[i].email);
+    printf("===========================\n");
+
 }
 void print_lista_onFile(Lista l, FILE *file){
     fprintf(file, "\nSize: %d\n", l.tam);
-    for(int i = 0; i < l.tam; i++)
+    for(int i = 0; i < l.tam; i++){
         fprintf(file, "\nCODIGO: %d\nNOME: %s \nTELEFONE:%s \nDATA DE NASCIMENTO: %s\nEMAIL: %s\n", l.dados[i].codigo,l.dados[i].nome,l.dados[i].telefone,l.dados[i].data_nasci,l.dados[i].email);
+    }
 
 }
 
